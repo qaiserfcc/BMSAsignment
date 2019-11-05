@@ -1,0 +1,24 @@
+<div class="content" style="text-align: center">
+  <div class="heading">
+    <h5>UPLOAD JOB DESCRIPTION FILE</h5>
+  </div>
+  <div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (onFileDropped)="uploadFile($event)">
+    <div class="content">
+      <h3>Drag and Drop files here</h3><br />
+      <h6>OR</h6><br />
+      <button class="btn teal" type="button">
+        <i class="fa fa-plus"></i>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp; Browse</span></button><br /><br />
+      <span class="geyText"> File size: 5mb (maximum)</span><br />
+      <span class="geyText"> File formats: EXCEL,PDF, MS WORD</span>
+    </div>
+    <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
+  </div>
+</div>
+<div *ngIf="loader" class="overlay">
+  <div class="dcenter">
+    
+    <div class="loader"></div>
+    <h6>Processing document ...</h6>
+  </div>
+</div>

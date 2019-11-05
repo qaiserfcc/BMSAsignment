@@ -1,0 +1,9 @@
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+span {
+    color: #E4E7EC;
+}

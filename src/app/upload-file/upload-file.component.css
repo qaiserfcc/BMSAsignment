@@ -1,0 +1,56 @@
+.uploadfilecontainer {
+  background-size: 100px;
+  background-position: center;
+  height: auto;
+  width: 35%;
+  margin: 20px auto;
+  border: 2px dashed #9A9C9D;
+  border-radius: 10px;
+  text-align: center;
+}
+.heading {
+  background-size: 100px;
+  background-position: center;
+  width: 35%;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.uploadfilecontainer:hover {
+  cursor: pointer;
+}
+.content{
+  margin-top: 65px;
+  margin-bottom: 50px;
+}
+.spinner_overlay {
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.2;
+  z-index: 1000;
+  text-align: center;
+  position: absolute;
+  transform: translate(-50%, 50%);
+}
+.teal{
+  text-align: left;
+  width: 130px;
+  color: white;
+  background-color: #06B3AA;
+}
+.geyText{
+  color:grey;
+}
+
+
+
+
+
+
+
+
