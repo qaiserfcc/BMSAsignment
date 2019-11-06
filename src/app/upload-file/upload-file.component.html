@@ -15,10 +15,9 @@
     <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
   </div>
 </div>
-<div *ngIf="loader" class="overlay">
-  <div class="dcenter">
-    
-    <div class="loader"></div>
-    <h6>Processing document ...</h6>
+
+<div  *ngIf="loader" id="preloader">
+  <div id="loader">
   </div>
+  <h5 id="loadermessage">Processing document ...</h5>
 </div>
