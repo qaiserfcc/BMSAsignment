@@ -1,0 +1,6 @@
+<div class="header">{{title}}</div>
+<div class="content body">
+    <div class="skills-wrap">
+        <div *ngFor="let mappedSkill of mappedSkills;let i = index" class="div-content" (click)="mappedSkillRowClick(mappedSkill,i)">{{mappedSkill.skillName}}</div>
+    </div>
+</div>

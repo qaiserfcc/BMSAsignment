@@ -1,36 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-listing',
-  templateUrl: './listing.component.html',
-  styleUrls: ['./listing.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class ListingComponent implements OnInit {
+export class DataService {
 
   skills: any = [];
-  standardSkills: any = [];
-  mappedSkills: any = [];
-
-  selectedRow: Number;
-  constructor() {
+  constructor() { 
     this.buildStaticData();
-    this.selectedRow = 0;
-    this.standardSkills = this.skills[0].standardSkills;
   }
 
-  ngOnInit() {
-  }
+  
   buildStaticData() {
-    // Coment out for automated static values
-    // for (let index = 1; index <= 5; index++) {
-    //   this.skills.push(
-    //     {
-    //       skill: "Skill " + index,
-    //       standardSkills: []
-    //     }
-    //   );
-    // }
-
     //Hard Coded
     this.skills.push(
       {
@@ -125,47 +106,7 @@ export class ListingComponent implements OnInit {
         skillName: ind + " develop staff",
         selected: false
       });
-      element.standardSkills.push({
-        refInd : ind,
-        skillName: ind + " maintain operational standards",
-        selected: false
-      });
     });
   }
-  skillRowClick(skill, index) {
-    this.selectedRow = index;
-    this.standardSkills = skill.standardSkills;
-    this.mappedSkills = skill.mappedSkills;
-  }
-  standSkillRowClick(skill, index) {
-    skill.selected = !skill.selected;
-    this.updateSkilMappedStatus(skill, skill.selected);
-    this.mappedSkills = this.skills[skill.refInd].mappedSkills;
-  }
-  mappedSkillRowClick(skill, index) {
-    //remove skill
-    this.skills[skill.refInd].mappedSkills = this.skills[skill.refInd].mappedSkills.filter(obj => obj.skillName != skill.skillName);
-    this.updateStandardSkillStatus(skill);
-  }
-  updateSkilMappedStatus(skill, add) {
-    if (add) {
-      //add skill
-      this.skills[skill.refInd].mappedSkills.push(skill);
-    }
-    else {
-      //remove skill
-      this.skills[skill.refInd].mappedSkills = this.skills[skill.refInd].mappedSkills.filter(obj => obj.skillName != skill.skillName);
-    }
-  }
-  updateStandardSkillStatus(skill) {
-    for (let f1 = 0; f1 < this.skills.length; f1++) {
-      for (let f2 = 0; f2 < this.skills[f1].standardSkills.length; f2++) {
-        if (this.skills[f1].standardSkills[f2].skillName == skill.skillName) {
-          this.skills[f1].standardSkills[f2].selected = !this.skills[f1].standardSkills[f2].selected;
-          break;
-        }
-      }
-    };
-    this.mappedSkills = this.skills[skill.refInd].mappedSkills;
-  }
+
 }

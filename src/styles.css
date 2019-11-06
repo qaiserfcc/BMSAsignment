@@ -1,4 +1,44 @@
-/* Loader */
+
+
+/* //Global All */
+
+.header {
+    height: 40px;
+    background: rgb(235, 235, 235);
+    line-height: 40px;
+    text-align: left;
+    padding: 0px 20px;
+  }
+  .content {
+    height: auto;
+  }
+  
+  .content.body {
+    padding: 10px 10px;
+  }
+  .div-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    word-wrap: break-word;
+    background: #ebebeb;
+    border-bottom: 0;
+    margin: 0px 5px 7px 0px;
+    border-radius: 1px;
+  }
+
+  .skills-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  
+  .selected{
+    background: #94E0FD;
+}
+
+
+  /* Loader */
 
 #preloader {
     position: fixed;

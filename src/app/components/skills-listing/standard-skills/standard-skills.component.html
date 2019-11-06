@@ -1,0 +1,7 @@
+<div class="header">Standard Skills</div>
+<div class="content body">
+    <div class="skills-wrap">
+        <div *ngFor="let standSkill of standardSkills;let i = index" [class.selected]="standSkill.selected" class="div-content" 
+            (click)="standardSkillRowClick(standSkill,i)">{{standSkill.skillName}}</div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+
+<div class="heading1">
+    Job Description : 
+    <span class="heading2"> Head of Ethics and Compliance </span>
+</div>
+<div class="skill-listing-container">
+    <div class="col col-custom">
+        <app-skills [title]="'Skills'" [skills]="this.skills" (_selectedSkill)="selectedSkill($event)"></app-skills>
+    </div>
+    <div class="col col-custom">
+        <app-standard-skills [title]="'Standard Skills'" [standardSkills]="this.standardSkills"
+            (standSkillRowClick)="standSkillRowClick($event)"></app-standard-skills>
+    </div>
+    <div class="col col-custom background-color">
+        <app-mapped-skills [title]="'Mapped Skills'" [mappedSkills]="this.mappedSkills" (mapSkillRowClick)="mappedSkillRowClick($event)"></app-mapped-skills>
+    </div>
+</div>
