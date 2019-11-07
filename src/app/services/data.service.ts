@@ -7,6 +7,7 @@ export class DataService {
 
   skills: any = [];
   constructor() { 
+    console.log("Once initiated");
     this.buildStaticData();
   }
 
