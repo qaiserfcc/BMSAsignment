@@ -24,25 +24,25 @@ export class SkillsListingComponent implements OnInit {
     this.mappedSkills = this.skills[0].mappedSkills;
   }
 
-  selectedSkill(skill) {
+  selectedSkill(skill: any) {
     this.selectedRow = skill.index;
     this.standardSkills = this.skills[this.selectedRow].standardSkills;
     this.mappedSkills = this.skills[this.selectedRow].mappedSkills;
   }
 
-  standSkillRowClick(skill) {
+  standSkillRowClick(skill: any) {
     skill.skill.selected = !skill.skill.selected;
     this.updateSkilMappedStatus(skill.skill, skill.skill.selected);
     this.mappedSkills = this.skills[skill.skill.refInd].mappedSkills;
   }
 
-  mappedSkillRowClick(skill) {
+  mappedSkillRowClick(skill: any) {
     //remove skill
     this.skills[skill.skill.refInd].mappedSkills = this.skills[skill.skill.refInd].mappedSkills.filter(obj => obj.skillName != skill.skill.skillName);
     this.updateStandardSkillStatus(skill.skill);
   }
 
-  updateSkilMappedStatus(skill, add) {
+  updateSkilMappedStatus(skill: any, add: any) {
     if (add) {
       //add skill
       this.skills[skill.refInd].mappedSkills.push(skill);
@@ -53,7 +53,7 @@ export class SkillsListingComponent implements OnInit {
     }
   }
   
-  updateStandardSkillStatus(skill) {
+  updateStandardSkillStatus(skill: any) {
     for (let f1 = 0; f1 < this.skills.length; f1++) {
       for (let f2 = 0; f2 < this.skills[f1].standardSkills.length; f2++) {
         if (this.skills[f1].standardSkills[f2].skillName == skill.skillName) {

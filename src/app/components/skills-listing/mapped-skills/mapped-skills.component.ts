@@ -5,15 +5,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './mapped-skills.component.html',
   styleUrls: ['./mapped-skills.component.css']
 })
-export class MappedSkillsComponent implements OnInit {
+export class MappedSkillsComponent{
   @Input('title') title = 'Mapped Skills';
   @Input('mappedSkills') mappedSkills = [];
   @Output('mapSkillRowClick') mapSkillRowClick: EventEmitter<any> = new EventEmitter();
 
-  ngOnInit() {
-  }
-  
-  mappedSkillRowClick(skill,index ) {
+  mappedSkillRowClick(skill: any,index: any ) {
     debugger;
     this.mapSkillRowClick.emit({ skill,index });
   }

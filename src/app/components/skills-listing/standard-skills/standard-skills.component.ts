@@ -5,16 +5,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './standard-skills.component.html',
   styleUrls: ['./standard-skills.component.css']
 })
-export class StandardSkillsComponent implements OnInit {
+export class StandardSkillsComponent{
   @Input('standardSkills') standardSkills = [];
   @Output('standSkillRowClick') standSkillRowClick: EventEmitter<any> = new EventEmitter(); 
-  ngOnChanges() {
-  }
 
-  ngOnInit() {
-  }
-
-  standardSkillRowClick(skill,index) {
+  standardSkillRowClick(skill: any,index: any) {
     this.standSkillRowClick.emit({skill,index});
   }
 }

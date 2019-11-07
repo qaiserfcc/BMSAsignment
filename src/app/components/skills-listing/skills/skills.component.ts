@@ -13,7 +13,7 @@ export class SkillsComponent implements OnInit {
     this.selectedRow = 0;
   }
   
-  selectedSkill(skill,index) {
+  selectedSkill(skill: any,index: any) {
     this.selectedRow = index;
     this._selectedSkill.emit({skill,index});
   }
