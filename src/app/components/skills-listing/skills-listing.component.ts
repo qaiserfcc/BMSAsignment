@@ -14,7 +14,6 @@ export class SkillsListingComponent implements OnInit {
   selectedRow: any;
 
   constructor(private dataService: DataService) {
-    debugger;
     this.skills = this.dataService.skills;
   }
 
@@ -30,38 +29,34 @@ export class SkillsListingComponent implements OnInit {
     this.mappedSkills = this.skills[this.selectedRow].mappedSkills;
   }
 
-  standSkillRowClick(skill: any) {
-    skill.skill.selected = !skill.skill.selected;
-    this.updateSkilMappedStatus(skill.skill, skill.skill.selected);
+  standSkillRowClick(skill: any) { //add skill
+    this.skills[skill.skill.refInd].standardSkills = this.skills[skill.skill.refInd].standardSkills.filter(obj => obj.skillName != skill.skill.skillName);
+    this.skills[skill.skill.refInd].mappedSkills.push(skill.skill);
+    this.standardSkills = this.skills[skill.skill.refInd].standardSkills;
     this.mappedSkills = this.skills[skill.skill.refInd].mappedSkills;
   }
 
   mappedSkillRowClick(skill: any) {
     //remove skill
     this.skills[skill.skill.refInd].mappedSkills = this.skills[skill.skill.refInd].mappedSkills.filter(obj => obj.skillName != skill.skill.skillName);
-    this.updateStandardSkillStatus(skill.skill);
-  }
-
-  updateSkilMappedStatus(skill: any, add: any) {
-    if (add) {
-      //add skill
-      this.skills[skill.refInd].mappedSkills.push(skill);
-    }
-    else {
-      //remove skill
-      this.skills[skill.refInd].mappedSkills = this.skills[skill.refInd].mappedSkills.filter(obj => obj.skillName != skill.skillName);
-    }
-  }
-  
-  updateStandardSkillStatus(skill: any) {
-    for (let f1 = 0; f1 < this.skills.length; f1++) {
-      for (let f2 = 0; f2 < this.skills[f1].standardSkills.length; f2++) {
-        if (this.skills[f1].standardSkills[f2].skillName == skill.skillName) {
-          this.skills[f1].standardSkills[f2].selected = !this.skills[f1].standardSkills[f2].selected;
-          break;
-        }
+    this.skills[skill.skill.refInd].standardSkills.push(skill.skill);
+    this.standardSkills = this.skills[skill.skill.refInd].standardSkills.sort((a, b) => {
+      if (a.level < b.level) {
+        return -1;
+      } else if (a.level > b.level) {
+        return 1;
+      } else {
+        return 0;
       }
-    };
-    this.mappedSkills = this.skills[skill.refInd].mappedSkills;
+    });
+    this.mappedSkills = this.skills[skill.skill.refInd].mappedSkills.sort((a, b) => {
+      if (a.level < b.level) {
+        return -1;
+      } else if (a.level > b.level) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });;
   }
 }

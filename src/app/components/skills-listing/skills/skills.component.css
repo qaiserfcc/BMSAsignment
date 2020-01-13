@@ -2,5 +2,7 @@
     padding: 10px 20px;
     border: 1px solid lightgrey;
     border-bottom: 0;
+    font-weight: 500;
+    font-size: smaller;
   }
   

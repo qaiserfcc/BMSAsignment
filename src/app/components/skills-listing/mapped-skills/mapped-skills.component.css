@@ -3,6 +3,8 @@
   box-shadow: 1px 1px 1px 1px grey;
 }
 .div-content {
-  background-color: #06ae93;
+  background-color: #06B3AA;
   color: white;
+  font-weight: normal;
+  font-size: smaller;
 }

@@ -2,9 +2,11 @@
     margin-left: 25px;
     margin-top: 15px;
     height: 40px;
+    font-weight: 600;
 }.heading2 {
     margin-left: 10px;
-    font-weight: 700
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .skill-listing-container {
@@ -12,6 +14,7 @@
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: flex-start;
+  height:90vh;
 }
 
 .col {
@@ -25,5 +28,5 @@
 }
 
 .background-color{
-  background-color: gainsboro;
+  background-color: #F3F5F7;
 }

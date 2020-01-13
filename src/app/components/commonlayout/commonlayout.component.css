@@ -6,4 +6,11 @@
 
 span {
     color: #E4E7EC;
+    font-size:17px;
+}
+
+li > span {
+    color: #E4E7EC;
+    font-weight: 500;
+    font-size:18px;
 }

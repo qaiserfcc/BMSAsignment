@@ -1,7 +1,15 @@
-<div class="header">Standard Skills</div>
+<div class="header">TAKAFO Standard Skills</div>
 <div class="content body">
     <div class="skills-wrap">
-        <div *ngFor="let standSkill of standardSkills;let i = index" [class.selected]="standSkill.selected" class="div-content" 
-            (click)="standardSkillRowClick(standSkill,i)">{{standSkill.skillName}}</div>
+        <div *ngFor="let standSkill of standardSkills;let i = index"  class="div-content" 
+        [ngClass]="{'top': standSkill.level == 1,
+        'medium':  standSkill.level == 2, 
+        'low': standSkill.level == 3}" (click)="standardSkillRowClick(standSkill,i)">{{standSkill.skillName}}</div>
     </div>
+    <div class="skills-wrap-legend">
+        <div class="legend-top" ></div> <p> Most Similar Skills</p>
+        <div class="legend-medium" ></div> <p>Most Similar Skills</p>
+        <div class="legend-low" ></div> <p>Most Similar Skills</p>
+    </div>
+   
 </div>

@@ -3,3 +3,32 @@
   .div-content:hover {
       box-shadow: 1px 1px 1px 1px grey;
     }
+    .legend-top {
+      background: #B1E4E3;
+      height: 15px;
+      width: 15px;
+      margin: 7px 7px 4px 4px;
+    }
+
+    .legend-medium {
+      background: #F5F4F0;
+      height: 15px;
+      width: 15px;
+      margin: 7px 7px 4px 25px;
+    }
+
+    .legend-low {
+      background: #D5EDFF;
+      height: 15px;
+      width: 15px;
+      margin: 7px 7px 4px 25px;
+    }
+
+    p {
+      margin-top: 5px;;
+      font-size: 12px;;
+      font-weight: 500;
+      color: transparent;
+      text-shadow: 0 0 1px rgba(0,0,0,0.5);
+    }
+  

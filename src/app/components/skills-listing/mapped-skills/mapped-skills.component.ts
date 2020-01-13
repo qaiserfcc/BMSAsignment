@@ -11,7 +11,6 @@ export class MappedSkillsComponent{
   @Output('mapSkillRowClick') mapSkillRowClick: EventEmitter<any> = new EventEmitter();
 
   mappedSkillRowClick(skill: any,index: any ) {
-    debugger;
     this.mapSkillRowClick.emit({ skill,index });
   }
 
